@@ -8,24 +8,43 @@
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
-    <main>
-        <h1>Renseignez le nom d'un joueur de foot</h1>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="formulaire.html">Page Robert Lewandoski</a></li>
+            <li><a href="formulaire2.html">Page Abdul-Yakinu Iddi</a></li>
+            <li><a href="formulaire3.html">Page Tosaint Rickets</a></li>
+            <li><a href="formulaire4.html">Page Keita Fujimura</a></li>
+            <li><a href="formulaire5.html">Page William Johan Frantzen</a></li>
+        </ul>
+    </div>
 
-        <form>
-          <label for="search">Search</label>
-          <input id="search" type="search" />
-          <button id="btnSearch">Go</button>
+    <h1>Bienvenue sur GuestFootballPlayer ! </h1>
+
+    <p>Le but de cette page est de vous proposer à la fois la possibilité de pouvoir rechercher un GIF de votre joueur préféré ou de réaliser un QCM afin de savoir si vous connaissez réellement votre joueur préféré.</p>
+
+    <main>
+        <h2>Renseignez le nom d'un joueur de foot</h2>
+
+        <form id="formRecherche">
+          <input id="search" type="search" placeholder="Rechercher un GIF" /> <br>
+          <button id="btnSearch">Rechercher</button>
         </form>
         <div class="out"></div>
 
     </main>
 
-    <div id="boutons">
-        <button onclick="window.location.href = 'Lewandoski.html'"> Page Robert Lewandoski </button>
-        <button onclick="window.location.href = '#'"> Page 2 </button>
-        <button onclick="window.location.href = '#'"> Page 3 </button>
-        <button onclick="window.location.href = '#'"> Page 4 </button>
-        <button onclick="window.location.href = '#'"> Page 5 </button>
+        <h2>Voici la liste des joueurs</h2>
+
+        <h3>Voici la liste des joueurs dont un questionnaire sous forme de QCM est disponible !  </h3>
+
+    <div id="listBoutons">
+        <button id="boutons" onclick="window.location.href = 'formulaire.html'"> Questionnaire Robert Lewandoski </button>
+        <button id="boutons" onclick="window.location.href = 'formulaire2.html'"> Questionnaire Abdul-Yakinu Iddi </button>
+        <button id="boutons" onclick="window.location.href = 'formulaire3.html'"> Questionnaire Tosaint Rickets </button>
+        <button id="boutons" onclick="window.location.href = 'formulaire4.html'"> Questionnaire Keita Fujimura </button>
+        <button id="boutons" onclick="window.location.href = 'formulaire5.html'"> Questionnaire William Johan Frantzen</button>
+
     </div>
 
     <script src="Js/script.js"></script>

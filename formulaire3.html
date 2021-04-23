@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/styleform.css">
+  </head>
+  <body>
+    <form id="form1">
+        <h1>Tosaint Rickets</h1>
+      <div id="step1">
+        <h1>Qu’elle est sa nationalité ? :</h1>
+        <div>
+          <input type="radio" name="step1" value="response1" id="step1-resp1" />
+          <label for="step1-resp1">ETATS UNIS </label>
+        </div>
+        <div>
+          <input type="radio" name="step1" value="response2" id="step1-resp2" />
+          <label for="step1-resp2">CANADA</label>
+        </div>
+        <div>
+          <input type="radio" name="step1" value="response3" id="step1-resp3" />
+          <label for="step1-resp3">ANGLETERRE</label>
+        </div>
+        <button id="btnGoToStep2">QUESTION 2</button>
+      </div>
+      <div id="step2">
+        <h1> Qu’elle est son âge ? </h1>
+        <div>
+          <input type="radio" name="step2" value="response1" id="step2-resp1" />
+          <label for="step2-resp1">33</label>
+        </div>
+        <div>
+          <input type="radio" name="step2" value="response2" id="step2-resp2" />
+          <label for="step2-resp2">37</label>
+        </div>
+        <div>
+          <input type="radio" name="step2" value="response3" id="step2-resp3" />
+          <label for="step2-resp3">30</label>
+        </div>
+        <button id="btnGoToStep3">QUESTION 3</button>
+      </div>
+      <div id="step3">
+        <h1>Qu’elle est ça taille ? </h1>
+        <div>
+          <input type="radio" name="step3" value="response1" id="step3-resp1" />
+          <label for="step3-resp1">183CM</label>
+        </div>
+        <div>
+          <input type="radio" name="step3" value="response2" id="step3-resp2" />
+          <label for="step3-resp2">189CM </label>
+        </div>
+        <div>
+          <input type="radio" name="step3" value="response3" id="step3-resp3" />
+          <label for="step3-resp3">190CM</label>
+        </div>
+        <button id="btnGoToStep4">QUESTION 4</button>
+      </div>
+      <div id="step4">
+        <h1>Qu’elle n'est sont poid ? </h1>
+        <div>
+          <input type="radio" name="step4" value="response1" id="step4-resp1" />
+          <label for="step4-resp1">73KG</label>
+        </div>
+        <div>
+          <input type="radio" name="step4" value="response2" id="step4-resp2" />
+          <label for="step4-resp2">80KG</label>
+        </div>
+        <div>
+          <input type="radio" name="step4" value="response3" id="step4-resp3" />
+          <label for="step4-resp3">77KG</label>
+        </div>
+        <button id="btnGoToStep5">QUESTION 5</button>
+      </div>
+      <div id="step5">
+        <h1>Qu’elle est sa ville de naissance ?</h1>
+        <div>
+          <input type="radio" name="step5" value="response1" id="step5-resp1" />
+          <label for="step5-resp1">EDMONTON</label>
+        </div>
+        <div>
+          <input type="radio" name="step5" value="response2" id="step5-resp2" />
+          <label for="step5-resp2">QUEBEC</label>
+        </div>
+        <div>
+          <input type="radio" name="step5" value="response3" id="step5-resp3" />
+          <label for="step5-resp3">PARIS</label>
+        </div>
+            <a href="https://soccer.sportmonks.com/api/v2.0/players/91000?api_token=ad8t2RifawYZ6LfWj0xTcB73j6TXWeoulAg6cBqRhWiqe39auaj1LZmywG4j&include=stats">Test</a>
+      </div>
+    </form>
+    <script>
+      const btnGoToStep2 = document.getElementById("btnGoToStep2");
+      let score = 0;
+      btnGoToStep2.addEventListener("click", function (e) {
+        e.preventDefault();
+        const userStep1Choice = document.querySelector(
+          "input[name=step1]:checked"
+        );
+        if (userStep1Choice) {
+          const userChoiceValue = userStep1Choice.value;
+          console.log("userChoiceValue", userChoiceValue);
+          if (userChoiceValue === "response2") {
+            score += 10;
+          }
+          console.log("score", score);
+          const step1HTML = document.getElementById("step1");
+          step1HTML.style.display = "none";
+          const step3HTML = document.getElementById("step3");
+          step3HTML.style.display = "none";
+          const step4HTML = document.getElementById("step4");
+          step4HTML.style.display = "none";
+          const step5HTML = document.getElementById("step5");
+          step5HTML.style.display = "none";
+          const step2HTML = document.getElementById("step2");
+          step2HTML.style.display = "block";
+        } else {
+          console.log("error");
+        }
+      });
+      const btnGoToStep3 = document.getElementById("btnGoToStep3");
+      btnGoToStep3.addEventListener("click", function (e) {
+        e.preventDefault();
+        const userStep2Choice = document.querySelector(
+          "input[name=step2]:checked"
+        );
+        if (userStep2Choice) {
+          const userChoiceValue = userStep2Choice.value;
+          console.log("userChoiceValue", userChoiceValue);
+          if (userChoiceValue === "response1") {
+            score += 10;
+          }
+          console.log("score", score);
+          const step2HTML = document.getElementById("step2");
+          step2HTML.style.display = "none";
+          const step3HTML = document.getElementById("step3");
+          step3HTML.style.display = "block";
+        } else {
+          console.log("error");
+        }
+      });
+      const btnGoToStep4 = document.getElementById("btnGoToStep4");
+      btnGoToStep4.addEventListener("click", function (e) {
+        e.preventDefault();
+        const userStep3Choice = document.querySelector(
+          "input[name=step3]:checked"
+        );
+        if (userStep3Choice) {
+          const userChoiceValue = userStep3Choice.value;
+          console.log("userChoiceValue", userChoiceValue);
+          if (userChoiceValue === "response2") {
+            score += 10;
+          }
+          console.log("score", score);
+          const step3HTML = document.getElementById("step3");
+          step3HTML.style.display = "none";
+          const step4HTML = document.getElementById("step4");
+          step4HTML.style.display = "block";
+        } else {
+          console.log("error");
+        }
+      });
+      const btnGoToStep5 = document.getElementById("btnGoToStep5");
+      btnGoToStep5.addEventListener("click", function (e) {
+        e.preventDefault();
+        const userStep4Choice = document.querySelector(
+          "input[name=step4]:checked"
+        );
+        if (userStep4Choice) {
+          const userChoiceValue = userStep4Choice.value;
+          console.log("userChoiceValue", userChoiceValue);
+          if (userChoiceValue === "response3") {
+            score += 10;
+          }
+          console.log("score", score);
+          const step4HTML = document.getElementById("step4");
+          step4HTML.style.display = "none";
+          const step5HTML = document.getElementById("step5");
+          step5HTML.style.display = "block";
+        } else {
+          console.log("error");
+        }
+      });
+    </script>
+  </body>
+</html>
